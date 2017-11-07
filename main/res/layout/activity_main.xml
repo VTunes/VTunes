@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+
+
+
+
+    <ImageView
+
+        android:id="@+id/imageView"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:layout_above="@+id/latestAddedSongs"
+
+        android:background="@drawable/back"
+
+        android:scaleType="centerCrop" />
+
+
+    <RelativeLayout
+
+        android:id="@+id/songPlayerTopLayout"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/song_artist"
+
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="20dp">
+
+
+
+
+
+        <co.mobiwise.library.InteractivePlayerView
+
+            android:id="@+id/interactivePlayerView"
+
+            android:layout_width="230dp"
+
+            android:layout_height="230dp"
+
+            android:layout_centerInParent="true"
+
+            app:imageCover="@drawable/disco"
+
+            app:selectedAction1="@drawable/shuffle_selected"
+
+            app:selectedAction2="@drawable/replay_selected"
+
+            app:unselectedAction1="@drawable/shuffle_unselected"
+
+            app:unselectedAction2="@drawable/replay_unselected" />
+
+
+
+        <ImageView
+
+            android:layout_width="33dp"
+
+            android:layout_height="33dp"
+
+            android:layout_centerVertical="true"
+
+            android:layout_marginLeft="10dp"
+
+            android:layout_toRightOf="@+id/interactivePlayerView"
+
+            android:background="@android:drawable/ic_media_next" />
+
+
+
+        <ImageView
+
+            android:layout_width="33dp"
+
+            android:layout_height="33dp"
+
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="10dp"
+
+            android:layout_toLeftOf="@+id/interactivePlayerView"
+
+            android:background="@android:drawable/ic_media_previous" />
+
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+
+        android:id="@+id/latestAddedSongs"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="220dp"
+
+        android:layout_alignParentBottom="true"
+
+        android:background="#262626">
+
+
+
+        <TextView
+
+            android:id="@+id/latestAddedSongTitle"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginTop="20dp"
+
+            android:text="Relax Your Mind"
+
+            android:textColor="#EEEEEE"
+
+            android:textSize="18sp" />
+
+
+
+        <View
+
+            android:id="@+id/view1"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="1.5dp"
+
+            android:layout_below="@+id/latestAddedSongTitle"
+
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginRight="20dp"
+
+            android:layout_marginTop="10dp"
+
+            android:background="#80fafafa" />
+
+
+
+        <ScrollView
+
+            android:id="@+id/scrollView"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/view1">
+
+
+
+            <RelativeLayout
+
+                android:id="@+id/relativeLayout1"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_margin="16dp">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:background="#546b76"
+                    tools:context=".MainActivity" >
+
+                    <ListView
+                        android:id="@+id/song_list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="137dp"
+                        android:animationCache="false"
+                        tools:animationCache="false"
+                        android:clickable="false"
+                        android:animateLayoutChanges="false"
+                        android:headerDividersEnabled="false"
+                        android:alwaysDrawnWithCache="true"
+                        android:cacheColorHint="@color/colorPrimary">
+
+                    </ListView>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+
+        android:layout_alignParentRight="true"
+
+        android:layout_alignTop="@+id/latestAddedSongs"
+
+        android:layout_marginRight="20dp"
+
+        android:layout_marginTop="-30dp"
+
+        android:background="@drawable/circle">
+
+
+
+        <ImageView
+
+            android:id="@+id/control"
+
+            android:layout_width="25dp"
+
+            android:layout_height="25dp"
+
+            android:layout_centerInParent="true"
+
+            android:background="@drawable/ic_action_play" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
